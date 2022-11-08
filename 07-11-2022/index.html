@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .main-container{
+        max-width: 100vw;
+        /* height:9500px; */
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* gap: 10px;
+        overflow-y: hidden; */
+    }
+    .blur-left{
+        position: absolute;
+        top: 25px;
+        left: 0;
+        height: 200px;
+        width: 200px;
+        background-color: #fed233;
+        opacity: 0.6;
+        filter: blur(162px);
+        
+    }
+    .blur-right{
+        position: absolute;
+        top: 40px;
+        right: 0;
+        height: 300px;
+        width: 300px;
+        background-color: #fed233;
+        opacity: 0.6;
+        filter: blur(162px);
+    }
+    .heading-container{
+        position: relative;
+        /* min-height: 0.25%; */
+        width: 90%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        background-color: rgb(255, 255, 255);
+        display: flex;
+    }
+   
+
+    .head-text-left {
+        height: 100%;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        justify-content: space-around;
+    }
+
+    .head-text-left-right {
+        height: 100%;
+        width: 15%;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-1 {
+        width: 93px;
+        height: 44px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 40px;
+        color: #fed233;
+    }
+
+    .text-2 {
+        width: 138px;
+        height: 44px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 40px;
+        color: #454545;
+    }
+
+    .text-3 {
+        width: 162px;
+        height: 44px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 40px;
+        color: #454545;
+    }
+
+    .text-4 {
+        width: 134px;
+        height: 44px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 40px;
+        color: #454545;
+    }
+
+    .text-5 {
+        width: 81px;
+        height: 44px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 40px;
+        color: #454545;
+    }
+
+    .text-6 {
+        width: 114px;
+        height: 44px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 40px;
+        color: #454545;
+    }
+
+    .text-7 {
+        width: 156px;
+        height: 44px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 40px;
+        color: #454545;
+        /* right: 305px; */
+    }
+    .second-text {
+        width: 700px;
+        /* height: 150px; */
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .line {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 70px;
+        color: #454545;
+    }
+
+    .pp {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 70px;
+        color: #fed233;
+    }
+
+    .spacing {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 70px;
+        color: transparent;
+    }
+
+    .img-1{
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        top: 290px;
+        left: 50px;
+    }
+    .img-2{
+        height: 450px;
+        width: 450px;
+    }
+    .img-3{
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        top: 290px;
+        right: 50px;
+        display: flex;
+    }
+    .third-text {
+    height: 84px;
+    width: 90%;
+    display: flex;
+    margin-top: 70px;
+}
+
+
+.black-text {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 70px;
+    color: #454545;
+}
+
+.yellow-text {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 70px;
+    color:#fed233;
+}
+
+.photo-background-yellow {
+    height: 600px;
+    width: 350px;
+    background-color: #fed233;
+    position: absolute;
+    top: 720px;
+    right: 50px;
+}
+
+.first-para {
+    height: 114px;
+    width: 830px;
+    position: absolute;
+    top: 800px;
+    left: 70px;
+}
+
+.paragraph{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 44px;
+    color: #5A5A5A;
+}
+.photo {
+    width: 930px;
+        height: 569px;
+        position: absolute;
+        top: 1001px;
+        right: -300px;
+}
+
+.para-cont-1 {
+    height: 264px;
+    width: 770px;
+    position: absolute;
+    top: 900px;
+    left: 60px;
+}
+
+.para {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 44px;
+    color: #5A5A5A;
+}
+
+.para-cont-2 {
+    width: 770px;
+    height: 132px;
+    position: absolute;
+    top: 1180px;
+    left:60px;
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 44px;
+    color: #FFFFFF;
+    background-color: #454545;
+    position: absolute;
+    top: 1350px;
+    left: 60px;
+}
+
+.fourth-text{
+    width: 100%;
+        height: 84px;
+        display: flex;
+        position: absolute;
+        top: 1500px;
+        left: 50px;
+}
+.fourth-first-para{
+    height: 114px;
+        width: 1348px;
+        position: absolute;
+        top: 1600px;
+        left: 50px;
+}
+.photo-background-yellow-1 {
+        width: 550px;
+        height: 400px;
+        position: absolute;
+        top: 1750px;
+        left: 50px;
+        background-color: #fed233;
+    }
+    .photo-1 {
+        width: 550px;
+        height: 400px;
+        position: absolute;
+        top: 1710px;
+        left: 80px;
+    }
+
+    .un-ordered-list-container {
+        height: 350px;
+        width: 550px;
+        position: absolute;
+        top: 1700px;
+        right: 50px;
+    }
+
+    .ul-text {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 350;
+        font-size: 25px;
+        line-height: 35px;
+        color: #5A5A5A;
+    }
+
+    .button-1 {
+        width: 200px;
+        height: 50px;
+        border: none;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 44px;
+        color: #FFFFFF;
+        background-color: #454545;
+        position: absolute;
+        top: 2050px;
+        right: 320px;
+    }
+    .fifth-text{
+        width: 400px;
+        height: 70px;
+        display: flex;
+        position: absolute;
+        top: 2200px;
+        left: 50px;
+    }
+    .fifth-first-para{
+        height: 114px;
+        width: 832px;
+        position: absolute;
+        top: 2300px;
+        left: 50px;
+    }
+    .experience-text-1 {
+        position: absolute;
+        top: 2430px;
+        left: 150px;
+        height: 57px;
+        width: 317px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 80px;
+        color: #5A5A5A;
+    }
+
+    .experience-text-2 {
+        position: absolute;
+        top: 2465px;
+        left: 150px;
+        height: 88px;
+        width: 673px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 250;
+        font-size: 20px;
+        line-height: 60px;
+        color: #5A5A5A;
+    }
+
+    
+    .experience-text-3 {
+        position: absolute;
+        top: 2490px;
+        left: 150px;
+        height: 88px;
+        width: 673px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 250;
+        font-size: 20px;
+        line-height: 55px;
+        color: #5A5A5A;
+    }
+
+    .plan-text-1 {
+        position: absolute;
+        top: 2570px;
+        left: 150px;
+        height: 57px;
+        width: 202px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 80px;
+        color: #5A5A5A;
+    }
+
+    .plan-text-2 {
+        position: absolute;
+        top: 2605px;
+        left: 150px;
+        height: 88px;
+        width: 673px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 250;
+        font-size: 20px;
+        line-height: 60px;
+        color: #5A5A5A;
+    }
+
+    .plan-text-3 {
+        position: absolute;
+        top: 2630px;
+        left: 150px;
+        height: 88px;
+        width: 673px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 250;
+        font-size: 20px;
+        line-height: 55px;
+        color: #5A5A5A;
+    }
+
+    .gaurantee-text-1 {
+        position: absolute;
+        top: 2720px;
+        left: 150px;
+        height: 57px;
+        width: 388px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 80px;
+        color: #5A5A5A;
+    }
+
+    .gaurantee-text-2 {
+        position: absolute;
+        top: 2760px;
+        left: 150px;
+        height: 88px;
+        width: 673px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 250;
+        font-size: 20px;
+        line-height: 55px;
+        color: #5A5A5A;
+    }
+
+    .gaurantee-text-3 {
+        position: absolute;
+        top: 2785px;
+        left: 150px;
+        height: 88px;
+        width: 673px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 250;
+        font-size: 20px;
+        line-height: 55px;
+        color: #5A5A5A;
+    }
+
+    .photo-background-yellow-2{
+        height: 320px;
+        width: 270px;
+        background-color: #fed233;
+        position: absolute;
+        top: 2320px;
+        right: 80px;
+    }
+
+    .sixth-text {
+        display: flex;
+        width: 980px;
+        height: 84px;
+        position: absolute;
+        top: 2900px;
+        left: 50px;
+    }
+    .sixth-text-para{
+        height: 114px;
+        width: 832px;
+        position: absolute;
+        top: 3000px;
+        left: 50px;
+    }
+    .yellow-box {
+        position: absolute;
+        width: 700px;
+        height: 315px;
+        background: #FED233;
+        top:3150px;
+        left: 55px;
+    }
+    .yellow-box-text {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 250;
+        font-size: 20px;
+        line-height: 35px;
+        color: #5A5A5A;
+    }
+
+    .blank-box-1 {
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.07);
+        top: 3150px;
+        left: 605px;
+    }
+
+    .blank-box-2 {
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.07);
+        top: 3150px;
+        left: 770px;
+    }
+
+    .blank-box-3 {
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.07);
+        top: 3150px;
+        left: 935px;
+    }
+
+    .blank-box-4 {
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.07);
+        top: 3315px;
+        left: 605px;
+    }
+
+    .blank-box-5 {
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.07);
+        top: 3315px;
+        left: 770px;
+    }
+
+    .blank-box-6 {
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.07);
+        top: 3315px;
+        left: 935px;
+    }
+    .seventh-text{
+        display: flex;
+        width: 980px;
+        height: 84px;
+        position: absolute;
+        top: 3500px;
+        left: 50px;
+    }
+
+    .work-text-1 {
+        position: absolute;
+        width: 500px;
+        height: 50px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height:40px;
+        color: #5A5A5A;
+        top: 3900px;
+        left: 50px;
+    }
+
+    .work-text-2 {
+        position: absolute;
+        width: 500px;
+        height: 200px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 30px;
+        color: #5A5A5A;
+        top: 3950px;
+        left: 50px;
+    }
+
+    .guide-text-1{
+        position: absolute;
+        width: 500px;
+        height: 50px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height:40px;
+        color: #5A5A5A;
+        top: 3900px;
+        left: 650px;
+    }
+    .guide-text-2{
+        position: absolute;
+        width: 500px;
+        height: 200px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 30px;
+        color: #5A5A5A;
+        top: 3950px;
+        left: 650px;
+    }
+    .nutrition-text-1{
+        position: absolute;
+        width: 500px;
+        height: 50px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height:40px;
+        color: #5A5A5A;
+        top: 4450px;
+        left: 50px;
+    }
+    .nutrition-text-2{
+        position: absolute;
+        width: 500px;
+        height: 200px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 30px;
+        color: #5A5A5A;
+        top: 4500px;
+        left: 50px;
+    }
+    .result-text-1{
+        position: absolute;
+        width: 500px;
+        height: 50px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height:40px;
+        color: #5A5A5A;
+        top: 4450px;
+        left: 650px;
+    }
+    .result-text-2{
+        position: absolute;
+        width: 500px;
+        height: 200px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 30px;
+        color: #5A5A5A;
+        top: 4500px;
+        left: 650px;
+    }
+    .eight-text {
+        display: flex;
+        width: 980px;
+        height: 84px;
+        position: absolute;
+        top: 4700px;
+        left: 50px;
+    }
+    .eight-text-para{
+        height: 114px;
+        width: 832px;
+        position: absolute;
+        top: 4800px;
+        left: 50px;
+    }
+
+    .last-box-yellow {
+        height: 800px;
+        width: 700px;
+        background-color: #FED233;
+        position: absolute;
+        top: 4900px;
+        left: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .last-yellow-inner-box{
+        height: 150px;
+        width: 600px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .text-last {
+        height: 700px;
+        width: 500px;
+        background-color: #FFFFFF;
+        position: absolute;
+        box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.07);
+        top: 4950px;
+        left: 720px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+    .last-img{
+        height: 400px;
+        width: 250px;
+        position: absolute;
+        top: 5200px;
+        left: 850px;
+    }
+</style>
+<body>
+    <div class="main-container">
+        <div class="blur-left"></div>
+        <div class="blur-right"></div>
+        
+        <div style="position: absolute;top: 150px;left: 15%;">
+            <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 48L37.6667 1.5V27.2817L94.5 27.3333V68.6667H37.6667V94.5L1.5 48Z" fill="#FED233" stroke="#FED233" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>  
+        </div>
+        <div style="position: absolute;top: 150px;right: 15%;">
+            <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M94.5 48L58.3333 1.5V27.2817L1.5 27.3333V68.6667H58.3333V94.5L94.5 48Z" fill="#FED233" stroke="#FED233" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                 
+        </div>
+
+        <div class="heading-container">
+
+            <div style="height: 100%;width: 15%;"></div>
+            <div class="head-text-left">
+                <p class="text-1">Home</p>
+                <p class="text-2">About Us</p>
+                <p class="text-3">Contact Us</p>
+                <p class="text-4">Category</p>
+                <p class="text-5">Blogs</p>
+                <p class="text-6">Recipes</p>
+                <p class="text-7">Gift A Plan</p>
+            </div>
+            <div class="head-text-left-right">
+                <i style="position: absolute;top: 12px;right: 60px;" class="fa-sharp fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+        <div class="second-text">
+            <p class="line">Get Your Perfect Workout</p>
+            <br>
+            <p class="line">With The<p class="spacing">.</p><p class="pp">Perfect Trainers</p></p>
+        </div>
+        <div class="img-1">
+            <img style="height: 300px;width: 300px;" src="unsplash_KPDbRyFOTnE.png" alt="">       
+        </div>
+        <div class="img-2">
+            <img style="height: 450px;width: 450px;" src="unsplash_eot-ka5dM7Q.jpg" alt=""> 
+        </div>
+        <div class="img-3">
+            <img style="height: 300px;width: 300px;" src="unsplash_nqUHQkuVj3c.png" alt="">
+        </div>
+
+        <div class="third-text">
+            <p class="black-text">What Is <p class="spacing">.</p><p class="yellow-text">Evolve Your Lifestyle</p></p>
+        </div>
+        <div class="photo-background-yellow"></div>
+
+        <div class="first-para">
+            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur, adipiscing elit. Sed quam</p>
+            <p class="paragraph"> sagittis aliquam, tortor sollicitudin egestas convallis.</p>
+        </div>
+    
+        <div class="photo">
+            <img style="width: 550px;height: 400px;" src="lifestyle.png">
+        </div>
+    
+        <div class="para-cont-1">
+            <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            <p class="para"> elit. Sed quam sagittis aliquam, tortor sollicitudin</p>
+            <p class="para"> egestas convallis. Lorem ipsum dolor sit amet,</p>
+            <p class="para"> consectetur adipiscing elit. Sed quam sagittis</p>
+            <p class="para"> aliquam, tortor sollicitudin egestas convallis.Lorem</p>
+            <p class="para"> ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+    
+        <div class="para-cont-2">
+            <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            <p class="para"> elit. Sed quam sagittis aliquam, tortor sollicitudin</p>
+            <p class="para"> egestas convallis. Lorem ipsum dolor sit amet,</p>
+        </div>
+    
+        <button class="button">Contact Us</button>  
+
+       
+        <div class="fourth-text">
+            <p class="black-text">Why People Should Take <p class="spacing">.</p><p class="yellow-text">Health Advice</p></p>
+        </div>
+
+        <div class="fourth-first-para">
+            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur, adipiscing elit. Sed quam</p>
+            <p class="paragraph"> sagittis aliquam, tortor sollicitudin egestas convallis.</p>
+        </div>
+
+        <div class="photo-background-yellow-1"></div>
+
+        <div class="photo-1">
+            <img style="width: 550px;height: 400px;" src="lifestyle.png">
+        </div>
+
+        <div class="un-ordered-list-container">
+            <ul>
+                <li><p class="ul-text">Lorem ipsum sit amet, consectetur adipiscing elit.</p></li>
+                <li><p class="ul-text">Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.</p></li>
+                <li><p class="ul-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
+                <li><p class="ul-text">Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
+            </ul>
+        </div>
+
+        <button class="button-1">Contact Us</button>
+
+        <div class="fifth-text">
+            <p class="black-text">Why<p class="spacing">.</p><p class="yellow-text">Choose Us</p></p>
+        </div>
+        <div class="fifth-first-para">
+            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur,</p>
+            <p  class="paragraph"> adipiscing elit.</p>
+        </div>
+
+        <img src="1.png" style="height: 80px;width: 70px;position: absolute;top: 2450px;left: 50px;">
+        <p class="experience-text-1">10+ Experience</p>
+        <p class="experience-text-2">Lorem ipsum dolor sit amet, consectetur</p> 
+        <p class="experience-text-3"> adipiscing elit. Lorem ipsum dolor sit</p>
+
+        <img src="2.png" style="height: 80px;width: 70px;position: absolute;top: 2600px;left: 50px;">
+        <p class="plan-text-1">Best Plan</p>
+        <p class="plan-text-2">Lorem ipsum dolor sit amet, consectetur</p>
+        <p class="plan-text-3"> adipiscing elit. Lorem ipsum dolor sit</p>
+
+        <img src="3.png" style="height: 80px;width: 70px;position: absolute;top: 2750px;left: 50px;">
+        <p class="gaurantee-text-1">Gaurantee Results</p>
+        <p class="gaurantee-text-2">Lorem ipsum dolor sit amet, consectetur</p>
+        <p class="gaurantee-text-3"> adipiscing elit. Lorem ipsum dolor sit</p>
+
+        <div class="photo-background-yellow-2"></div>
+        <img src="lifestyle.png" style="height: 500px;width: 600px;position: absolute;top: 2350px;right: 116px;">
+
+        <div class="sixth-text">
+            <p class="yellow-text">Categories<p class="spacing">.</p><p class="black-text">To Which We Provide</p></p>
+        </div>
+
+        <div class="sixth-text-para">
+            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur, adipiscing elit. Sed quam</p>
+            <p class="paragraph"> sagittis aliquam, tortor sollicitudin egestas convallis.</p>
+        </div>
+
+        <div class="yellow-box">
+        </div>
+        <div style="height: 400px;width: 500px;top: 3190px;position: absolute;left: 60px;">
+            <ul>
+                <li class="yellow-box-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li class="yellow-box-text">Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.</li>
+                <li class="yellow-box-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li class="yellow-box-text">Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            </ul>
+            </div>
+
+            <div class="blank-box-1"></div>
+            <div class="blank-box-2"></div>
+            <div class="blank-box-3"></div>
+            <div class="blank-box-4"></div>
+            <div class="blank-box-5"></div>
+            <div class="blank-box-6"></div>
+
+            <div class="seventh-text">
+                <p class="black-text">What will<p class="spacing">.</p><p class="yellow-text">We Provide</p></p>
+            </div>
+
+            <img style="height: 300px;width: 500px;position: absolute;left: 50px;top: 3600px;" src="work.png">
+            <p class="work-text-1">Personalized Workout Plan</p>
+            <p class="work-text-2">You will be given a personalized workout plan according to your goal that suits you. If you don’t have time to go to the gym, no problem at all. Our program is designed in such a way that you can follow your workout plan even at your home.</p>
+    
+            <img style="height: 300px;width: 500px;position: absolute;left: 650px;top: 3600px;" src="guidance.png">
+            <p class="guide">Expert Guidance</p>
+            <p class="guide-text-2">You will be given personalized experts guidance. Our experts will consult you, find out your problems and weeknesses and provide you a solution for it. They will help you in changing your bad habits and make you adopt a healthy lifestyle.</p>
+    
+            <img style="height: 300px;width: 500px;position: absolute;left: 50px;top: 4150px;" src="nutrition.png">
+            <p class="nutrition-text-1">Personalized Nutrition Plan</p>
+            <p class="nutrition-text-2">No temporary diets can reduce your body fat. You will be given a personalized nutrition plan that suits your needs and choices. We will guide you, what exactly you are supposed to eat everyday. You need not to worry about the calories. Once you enrolled in this program, it will be our responsibility to count your calories not yours</p>
+    
+            <img style="height: 300px;width: 500px;position: absolute;left: 650px;top: 4150px;" src="result.png">
+            <p class="result-text-1">Results</p>
+            <p class="result-text-2">At last the only thing that matters is what you do, CONSISTENTLY!! Only action can create change. The only thing that we want from your side is…. Consistency. That's it. Rest, we will take care of. We will make you fitter and by the end of 90 days, you yourself will see the good changes.</p>
+
+            <div class="eight-text">
+                <p class="black-text">How It Actually<p class="spacing">.</p><p class="yellow-text">Works ?</p></p>
+            </div>
+    
+            <div class="eight-text-para">
+                <p class="paragraph">Lorem ipsum dolor sit amet, consectetur, adipiscing elit. Sed quam</p>
+                <p class="paragraph"> sagittis aliquam, tortor sollicitudin egestas convallis.</p>
+            </div>
+
+            <div class="last-box-yellow">
+                <div class="last-yellow-inner-box">
+                    <p style="color: #5A5A5A;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 400;font-size: 30px;line-height: 20px;text-align: center;">Expert Guidance</p>
+    
+                    <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 300;font-size: 20px;line-height: 20px;color: #5A5A5A;text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, </p>
+                </div>
+    
+                <div class="last-yellow-inner-box">
+                    <p style="color: #5A5A5A;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 400;font-size: 30px;line-height: 20px;text-align: center;">Personalized Nutrition Plan</p>
+    
+                    <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 300;font-size: 20px;line-height: 20px;color: #5A5A5A;text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, </p>
+                </div>
+    
+                <div class="last-yellow-inner-box">
+                    <p style="color: #5A5A5A;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 400;font-size: 30px;line-height: 20px;text-align: center;">Personalized Workout Plan</p>
+    
+                    <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 300;font-size: 20px;line-height: 20px;color: #5A5A5A;text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, </p>
+    
+                </div>
+    
+                <div class="last-yellow-inner-box">
+                    <p style="color: #5A5A5A;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 400;font-size: 30px;line-height: 20px;text-align: center;">Daily Tasks Tracking</p>
+    
+                    <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 300;font-size: 20px;line-height: 20px;color: #5A5A5A;text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, </p>
+                </div>
+            </div>
+            <div style="height: 50px;width: 50px;position: absolute;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 300;font-size: 25px;line-height: 44px;text-align: center;color: #5A5A5A;top: 4970px;background-color: #FFFFFF;display: flex;justify-content: center;align-items: center;border-radius: 50%;left: 70px;">1</div>
+            <div style="height: 50px;width: 50px;position: absolute;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 300;font-size: 25px;line-height: 44px;text-align: center;color: #5A5A5A;top: 5160px;background-color: #FFFFFF;display: flex;justify-content: center;align-items: center;border-radius: 50%;left: 70px;">2</div>
+            <div style="height: 50px;width: 50px;position: absolute;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 300;font-size: 25px;line-height: 44px;text-align: center;color: #5A5A5A;top: 5350px;background-color: #FFFFFF;display: flex;justify-content: center;align-items: center;border-radius: 50%;left: 70px;">3</div>
+            <div style="height: 50px;width: 50px;position: absolute;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: normal;font-weight: 300;font-size: 25px;line-height: 44px;text-align: center;color: #5A5A5A;top: 5540px;background-color: #FFFFFF;display: flex;justify-content: center;align-items: center;border-radius: 50%;left: 70px;">4</div>
+
+            <div class="text-last">
+                <div style="width: 400px;height: 250px;display: flex;flex-direction: column;align-items: center;">
+                    <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: italic;font-weight: 500;font-size: 40px;line-height: 70px;color: #445544;text-align: center;">Get In Touch With</p>
+    
+                    <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: italic;font-weight: 500;font-size: 40px;line-height: 60px;color: #FED233;width: 609px;text-align: center;">Evolve Your Life Style</p>
+    
+                    <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: italic;font-weight: 500;font-size: 40px;line-height: 60px;color: #454545;width: 609px;text-align: center;">Today</p>
+                </div>
+            </div>
+            
+            <img class="last-img" src="train.jpg">
+    
+    </div>
+</body>
+</html>
+
+
+
