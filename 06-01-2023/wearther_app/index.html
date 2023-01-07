@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <h1 id="heading">Weather App</h1>
+  <div id="input_container">
+    <h3 id="name">Enter City Name:</h3>
+    <input id="search_input" type="text" placeholder="search your city">
+    <button id="search_button">Search</button>
+  </div>
+
+
+  <div id="action_container">
+
+    <!-- 1st -->
+    <div id="city_container">
+      <i style="color: #6dbff8;" class="fa-solid fa-location-dot"></i>
+      <h1 id="city_name">-||-</h1>
+      <h1 id="country" style="color: #b8cbde;">-||-</h1>
+      <h1 id="d_t" style="color: #b8cbde;">-||-</h1>
+      
+    </div>
+    <hr style="color: #6dbff8;width: 60vw;margin-top: 20px;">
+
+    <!-- 2nd -->
+    <div id="temperature_container">
+      <p id="temperature">0&deg;C</p>
+      <p id="temp_condition">-||-</p>
+      <img src=""   alt="weather" id="weather_image">
+    </div>
+    <hr style="color: #6dbff8;width: 60vw;">
+<!-- 3rd -->
+    <div id="info_container">
+      <div id="wind_info">
+        <i style="color: #6dbff8;margin-bottom: 5px;" class="fa-solid fa-wind"></i>
+        <h2 style="color: #6dbff8;margin-bottom: 5px;">Wind</h2>
+        <h3 id="wind_speed" style="color: #b8cbde;">-||-</h3>
+    </div>
+    <div id="humidity_info">
+      <img src="https://cdn-icons-png.flaticon.com/128/4005/4005754.png" style="height: 20px;margin-bottom: 5px;" alt="">     
+      <h2 style="color: #6dbff8;margin-bottom: 5px;">Humidity</h2>
+      <h3 id="humidity"style="color: #b8cbde;">-||-</h3>
+    </div>
+    <div id="cloudiness_info">
+      <i style="color: #6dbff8;margin-bottom: 5px;" class="fa-solid fa-cloud"></i>
+        <h2 style="color: #6dbff8;margin-bottom: 5px;">Cloudiness</h2>
+        <h3 id="cloudiness"style="color: #b8cbde;">-||-</h3>
+    </div>
+    <div id="pressure_info">
+      <i style="color: #6dbff8;margin-bottom: 5px;" class="fa-solid fa-temperature-three-quarters wind_icon"></i>
+      <h2 style="color: #6dbff8;margin-bottom: 5px;">Pressure</h2>
+      <h3 id="pressure"style="color: #b8cbde;">-||-</h3>
+  </div>
+  <div id="visibility_info">
+      <i style="color: #6dbff8;margin-bottom: 5px;" class="fa-solid fa-eye wind_icon"></i>
+      <h2 style="color: #6dbff8;margin-bottom: 5px;">Visibility</h2>
+      <h3 id="visibility"style="color: #b8cbde;">-||-</h3>
+  </div>
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
